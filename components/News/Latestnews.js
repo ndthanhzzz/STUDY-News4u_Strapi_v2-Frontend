@@ -31,7 +31,7 @@ export default function Latestnews({ news }) {
         <div className="">
              <ImageNews key={news.id} imgnews={news}/>
         </div>
-        <div className="sm:h-1/6 text-lg font-bold leading-tight text-justify hover:text-slate-400">
+        <div className="sm:h-1/6 font-bold leading-tight text-justify hover:text-slate-400">
             <Link href={`/thread/${news.attributes.slug}`}>{news.attributes.title}</Link>
         </div>
         <div className="sm:h-3/6 text-gray-600 my-2 text-justify">

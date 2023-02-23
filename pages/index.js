@@ -99,7 +99,7 @@ const Page = ({latestPost,cate}) => {
       <span className="mr-2"><Button href="/location-vn">Vietnam</Button></span>
       <span className="ml-2"><Button href="/location-global">Global</Button></span>
     </nav>
-    <div className="flex flex-col font-semibold text-sm">
+    <div className="flex flex-col ">
     {/* Section 1 */}
       <SectionCate key={cate.id} cate={cate}/>
     {/* Section 2 */}
