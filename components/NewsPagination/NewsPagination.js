@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { Image } from "antd";
-
-function TagCate({tagCate}){
-  return(
-    <span className="">
-      <Link className="hover:text-blue-500" href={`/categories/${tagCate.attributes.slug}`}> {tagCate.attributes.title} </Link>
-    </span>
-  )
-}
+import { ShowTagCategories } from "../ShowTagCategories/ShowTagCategories";
 
 function ImageNews({imgnews}){
   if(imgnews.attributes.cover.data==null){
@@ -46,13 +39,9 @@ export default function NewsPagination({ news }) {
             <span className="h-1/2 border-l-2 border-red-600 mr-2"/> 
               Tag:
               {news.attributes.categories.data.map((citem)=>(
-                <TagCate key={citem.id} tagCate={citem}/>
+                <ShowTagCategories key={citem.id} tagCate={citem}/>
               ))}
         </div>
     </div>
   );
-}
-
-export {
-  TagCate,
 }

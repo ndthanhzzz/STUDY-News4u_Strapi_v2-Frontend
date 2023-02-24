@@ -2,12 +2,11 @@ import { Image } from 'antd'
 import React from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
-import { TagCate } from './Latestnews'
+import { TagCate } from './Allnews'
 import { SectionCate } from '@/pages'
 
 
 function ShowNews ({detail,imglink,gcate}){
-  console.log(gcate)
   const configTime = new Date(detail.attributes.createdAt)
   const getTime = configTime.toLocaleTimeString(); //Time String
   const getDate = configTime.toLocaleDateString(); //Date String
@@ -28,8 +27,9 @@ function ShowNews ({detail,imglink,gcate}){
           </h1>
           <h2 className='font-bold text-sm'>
             🕗 {getTime} - {getDate}
+            <br/>
+            👁 {detail.attributes.views}
           </h2>
-          
           <br/>
           <ReactMarkdown className='text-justify px-10 indent-10'>
             {detail.attributes.content}

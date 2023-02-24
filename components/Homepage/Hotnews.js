@@ -1,89 +1,83 @@
 import React from 'react'
 import Link from 'next/link'
 import { Image } from 'antd'
+import { ShowTagCategories } from '../ShowTagCategories/ShowTagCategories'
 
-const Hotnews1st = (hot1st) => {
-    return(
-        <div className='flex flex-col'>
-            <div className=''>
-                <Image className='rounded-xl' src="/news-cover.jpg" alt='cover' loading='lazy'/>
-            </div>
-            <div>
-                Đây là tin hot nhất
-            </div>
 
-        </div>
-    )
-}
-
-const Hotnews2st = (hot2st) => {
-    return(
-        <div className='flex flex-col '>
-            <div >
-                <Image className='rounded-xl' src="/news-cover.jpg" alt='cover' loading='lazy'/>
-            </div>
-            <div>
-                Đây là tin hot thứ 2
-            </div>
-    
-        </div>
-    )
-}
-
-const Hotnews3st = (hot3st) => {
+function ImagenewsCustom({imgnews}){
+    if(imgnews.attributes.cover.data==null){
+      return(
+        <Image height={200} width={300} className="rounded-xl" src="/news-cover.jpg" alt="cover" loading="lazy"/>
+        )}
+    const url = process.env.NEXT_PUBLIC_HOST_V2 + imgnews.attributes.cover.data.attributes.url
     return (
-        <div className=''>
-            <div >
-                <Image className='rounded-xl' src="/news-cover.jpg" alt='cover' loading='lazy'/>
-            </div>
-            <div>
-                Danh sách tin hot theo view (tin hot thứ 3 đến 10)
-            </div>
-        </div>
+      <Image  height={200} width={300} className="rounded-xl" src={url} alt="cover" loading="lazy"/>
     )
 }
 
-const Hotnews4st = (hot4st) => {
+function ImagenewsFill({imgnews}){
+    if(imgnews.attributes.cover.data==null){
+      return(
+        <Image className="rounded-xl" src="/news-cover.jpg" alt="cover" loading="lazy"/>
+        )}
+    const url = process.env.NEXT_PUBLIC_HOST_V2 + imgnews.attributes.cover.data.attributes.url
+    return (
+      <Image className="rounded-xl" src={url} alt="cover" loading="lazy"/>
+    )
+}
+
+const HotnewsLarge = (largenews) => {
     return(
-        <div className=''>
-            <div >
-                <Image className='rounded-xl' src="/news-cover.jpg" alt='cover' loading='lazy'/>
-            </div>
+        <div className='flex flex-col sm:mr-2 mr-auto'>
+            <ImagenewsFill imgnews={largenews.largenews}/>
             <div>
-                Danh sách tin hot theo view (tin hot thứ 3 đến 10)
+                <span className="border-l-4 border-red-600 mr-2"/>
+                👁 {largenews.largenews.attributes.views} 
+                <br/>
+            </div>
+            <div className="text-black text-sm">
+                <Link href={`/thread/${largenews.largenews.attributes.slug}`}  className='font-bold hover:text-slate-400'>
+                    {largenews.largenews.attributes.title}
+                </Link>
+                <div className='my-2'>
+                    ➣
+                    {largenews.largenews.attributes.categories.data.map((citem)=>(
+                    <ShowTagCategories key={citem.id} tagCate={citem}/>
+                    ))}
+                </div>
+                <Link href={`/thread/${largenews.largenews.attributes.slug}`}  className='my-5 hover:text-slate-400'>
+                    {largenews.largenews.attributes.description}
+                </Link>
             </div>
         </div>
     )
 }
-const Hotnews5st = (hot5st) => {
-    return(
-        <div className=''>
-            <div >
-                <Image className='rounded-xl' src="/news-cover.jpg" alt='cover' loading='lazy'/>
-            </div>
+
+const SlideHotnews = (slidehot) => {
+    return (
+        <div className="w-auto mr-2 mb-2">
+            <ImagenewsCustom imgnews={slidehot.slidehot}/>
             <div>
-                Danh sách tin hot theo view (tin hot thứ 3 đến 10)
+            <span className="border-l-4 border-red-600 mr-2"/>
+            👁 {slidehot.slidehot.attributes.views} 
+            <br/>
             </div>
-    
+            <div className="text-black text-sm">
+                <Link href={`/thread/${slidehot.slidehot.attributes.slug}`}  className='font-bold hover:text-slate-400'>
+                    {slidehot.slidehot.attributes.title}
+                </Link>
+                <div className='my-2'>
+                    ➣
+                    {slidehot.slidehot.attributes.categories.data.map((citem)=>(
+                    <ShowTagCategories key={citem.id} tagCate={citem}/>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }
-
-
-// const SlideHotnews = (slidehot) => {
-//     return (
-//         <div className=''>
-//             <div >
-//                 <Image className='rounded-xl' src="/news-cover.jpg" alt='cover' loading='lazy'/>
-//             </div>
-//         </div>
-//     )
-// }
 
 export {
-    Hotnews1st,
-    Hotnews2st,
-    Hotnews3st,
-    Hotnews4st,
-    Hotnews5st,
+    HotnewsLarge,
+    SlideHotnews
 }

@@ -1,4 +1,4 @@
-import Latestnews from "@/components/News/Latestnews"
+import Latestnews from "@/components/Homepage/Latestnews"
 import Footer from "@/components/Layout/Footer/Footer"
 import Header from "@/components/Layout/Header/Header"
 import SlideCate from "@/components/ListCate/SlideCate"
@@ -54,7 +54,6 @@ const Page = ({latestPost,cate}) => {
     </div>
 
     {/* Section 3 */}
-
     
       {/* ---------- */}
     </div>

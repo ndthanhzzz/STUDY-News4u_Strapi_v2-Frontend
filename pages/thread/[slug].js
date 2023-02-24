@@ -4,12 +4,11 @@ import SingleNews from "@/components/News/SingleNews";
 import axios from "axios";
 
 const Detail = ({news,gcate}) => {
-
     return (
       <div className="bg-white">
-          <Header/>
-          <SingleNews news={news} gcate={gcate}/>
-          <Footer/>
+        <Header/>
+        <SingleNews news={news} gcate={gcate}/>
+        <Footer/>
       </div>
     );
   }

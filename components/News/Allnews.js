@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Image } from "antd";
+import { ShowTagCategories } from "../ShowTagCategories/ShowTagCategories";
 
 function TagCate({tagCate}){
   return(
@@ -46,7 +47,7 @@ export default function Allnews({ news }) {
             <span className="h-1/2 border-l-2 border-red-600 mr-2"/> 
               Tag:
               {news.attributes.categories.data.map((citem)=>(
-                <TagCate key={citem.id} tagCate={citem}/>
+                <ShowTagCategories key={citem.id} tagCate={citem}/>
               ))}
         </div>
     </div>
