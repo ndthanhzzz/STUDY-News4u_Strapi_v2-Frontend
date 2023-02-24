@@ -61,7 +61,7 @@ function SectionHotNews(Hotnews){
   return (
     <div>
       <div className="text-black text-left text-base py-2 font-bold text-shadow-black leading-10">       
-      📈 HOT NEWS (🚩 Chia bố cục trước: hàng dưới cùng có thể show hot news theo danh sách dạng tượt giống chủ đề)
+      📈 HOT NEWS (🚩 Chia bố cục trước: hàng dưới cùng có thể show hot news theo scroll)
       </div>
       <div className="flex flex-col m-2">
         <div className="flex sm:flex-row flex-col sm:m-0 h-auto">
