@@ -28,7 +28,7 @@ function ImagenewsFill({imgnews}){
 
 const HotnewsLarge = (largenews) => {
     return(
-        <div className='flex flex-col sm:mr-2 mr-auto'>
+        <div className='flex flex-col sm:mr-2 mr-auto mb-5'>
             <ImagenewsFill imgnews={largenews.largenews}/>
             <div>
                 <span className="border-l-4 border-red-600 mr-2"/>
