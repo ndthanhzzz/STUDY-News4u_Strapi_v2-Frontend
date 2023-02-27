@@ -3,11 +3,11 @@ import Header from '@/components/Layout/Header/Header';
 import Footer from '@/components/Layout/Footer/Footer';
 
 import {   
-            SendOutlined,  } from '@ant-design/icons';
+        SendOutlined,  
+        } from '@ant-design/icons';
 import { 
-            Space,
-         
-            } from 'antd';
+        Space,
+        } from 'antd';
 
 export default function index() {
   return (
