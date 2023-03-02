@@ -69,7 +69,7 @@ export default function Footer() {
                         Theo dõi chúng tôi
                     </div>
                     <li className="hover:text-slate-400 hover:font-bold py-1">    
-                        <Link className="hover:text-slate-400 hover:font-bold py-1" href={`https://facebok.com`}>
+                        <Link className="hover:text-slate-400 hover:font-bold py-1" href={`https://facebook.com`}>
                             Facebook
                         </Link>
                     </li>
