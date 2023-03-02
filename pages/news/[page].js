@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '@/components/Layout/Header/Header'
 import Footer from '@/components/Layout/Footer/Footer'
 import axios from 'axios'
-import NewsPagination from '@/components/NewsPagination/NewsPagination'
+import NewsPagination from '@/components/News/NewsPagination'
 import Link from 'next/link'
 
 import { SectionCate } from '@/pages'

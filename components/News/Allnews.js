@@ -45,7 +45,7 @@ export default function Allnews({ news }) {
                   </Link>
               </div>
           </div>
-          <div className="sm:h-1/3 h-auto text-gray-500">
+          <div className="sm:h-1/3 h-auto text-gray-500 flex flex-col justify-around">
               <NewsTagCate cate={news}/>
               <Link href={`/thread/${news.attributes.slug}`}> {getTime} - {getDate} </Link>              
           </div>

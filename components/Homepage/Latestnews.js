@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Image } from "antd";
 import { ShowTagCategories } from "../ShowTagCategories/ShowTagCategories";
+import { NewsTagCate } from "../Categories/NewsTagCate";
 
 import { timeAgo } from "../timeAgo";
 
@@ -34,12 +35,7 @@ export default function Latestnews({ news }) {
         <div className="sm:h-1/6 text-gray-500">
             <span className="h-1/2 border-l-2 border-red-600 mr-2"/> 
             <Link href={`/thread/${news.attributes.slug}`}> ⏱ {ago} </Link>
-            <br/>
-            <span className="h-1/2 border-l-2 border-red-600 mr-2"/> 
-            <span className="font-bold">Tag:</span>
-            {news.attributes.categories.data.map((citem)=>(
-              <ShowTagCategories key={citem.id} tagCate={citem}/>
-            ))}
+            <NewsTagCate cate={news}/>
         </div>
     </div>
   );
