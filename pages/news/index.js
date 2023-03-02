@@ -4,14 +4,19 @@ import Allnews from '@/components/News/Allnews'
 import React from 'react'
 import axios from 'axios'
 import Link from 'next/link'
+import { SectionCate } from '@/pages'
 
-const News = ({allnews}) => {
+
+const News = ({allnews,cate}) => {
   return(
     <div className='bg-white'>
       <Header/>
       <div className='sm:mx-40'>
         <div>
-          <div className="text-black text-center text-xl py-2 font-bold leading-10"> 
+          <SectionCate key={cate.id} cate={cate}/>
+        </div>
+        <div>
+          <div className="text-black text-center text-xl py-2 mb-5 font-bold leading-10"> 
               DANH SÁCH TIN TỨC
           </div>
           <div className="flex flex-row flex-shrink flex-wrap mx-3">
@@ -41,9 +46,13 @@ export default News
 
 
 News.getInitialProps = async (ctx) => {
-  const respost = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/posts?pagination[page]=1&pagination[pageSize]=6&populate=*`)
+  const respost = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/posts?sort=createdAt%3Adesc&pagination[page]=1&pagination[pageSize]=6&populate=*`)
   const allnews = await respost.data.data
+
+  const rescate = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/categories?populate=*`)
+  const cate = await rescate.data.data
   return { 
     allnews,
+    cate
   }
 }

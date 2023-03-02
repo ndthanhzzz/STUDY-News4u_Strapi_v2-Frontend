@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Image } from 'antd'
 import { ShowTagCategories } from '../ShowTagCategories/ShowTagCategories'
+import { NewsTagCate } from '../Categories/NewsTagCate'
 
 
 function ImagenewsCustom({imgnews}){
@@ -28,7 +29,7 @@ function ImagenewsFill({imgnews}){
 
 const HotnewsLarge = (largenews) => {
     return(
-        <div className='flex flex-col sm:mr-2 mr-auto mb-5'>
+        <div className='flex flex-col'>
             <ImagenewsFill imgnews={largenews.largenews}/>
             <div>
                 <span className="border-l-4 border-red-600 mr-2"/>
@@ -40,10 +41,7 @@ const HotnewsLarge = (largenews) => {
                     {largenews.largenews.attributes.title}
                 </Link>
                 <div className='my-2'>
-                    ➣
-                    {largenews.largenews.attributes.categories.data.map((citem)=>(
-                    <ShowTagCategories key={citem.id} tagCate={citem}/>
-                    ))}
+                    <NewsTagCate cate={largenews.largenews}/>
                 </div>
                 <Link href={`/thread/${largenews.largenews.attributes.slug}`}  className='my-5 hover:text-slate-400'>
                     {largenews.largenews.attributes.description}
@@ -67,10 +65,7 @@ const SlideHotnews = (slidehot) => {
                     {slidehot.slidehot.attributes.title}
                 </Link>
                 <div className='my-2'>
-                    ➣
-                    {slidehot.slidehot.attributes.categories.data.map((citem)=>(
-                    <ShowTagCategories key={citem.id} tagCate={citem}/>
-                    ))}
+                    <NewsTagCate cate={slidehot.slidehot}/>
                 </div>
             </div>
         </div>

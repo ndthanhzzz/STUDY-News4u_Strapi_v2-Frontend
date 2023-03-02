@@ -1,5 +1,4 @@
-
-
+/* Phan trang */
   .pagination {
     display: inline-block;
   }
@@ -18,7 +17,9 @@
   
   .pagination a:hover:not(.active) {background-color: #ddd;}
 
-  .fill {
+
+  
+/* .fill {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,4 +29,33 @@
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%
+} */
+
+
+
+
+ 
+/* Hide over content description (Allnews + NewsPagination) */   
+.description-page {
+  overflow: hidden;
+  width:100%;                      
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.description-home-mobile{
+  overflow: hidden;
+  width:100%;                      
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.description-home{
+  overflow: hidden;
+  width:100%;                      
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

@@ -4,25 +4,34 @@ import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import { TagCate } from './Allnews'
 import { SectionCate } from '@/pages'
+import { timeAgo } from '../timeAgo'
 
+import { SingleNewsTagCate } from '../Categories/SingleNewsTagCate'
 
 function ShowNews ({detail,imglink,gcate}){
+  // console.log(detail.attributes.categories.data)
   const configTime = new Date(detail.attributes.createdAt)
   const getTime = configTime.toLocaleTimeString(); //Time String
   const getDate = configTime.toLocaleDateString(); //Date String
 
+  // const ago = timeAgo(new Date(configTime))
   const url = imglink;
+
   return(
     <div className='mx-auto sm:mx-40 flex flex-col sm:flex-row  my-10 '> 
       <div className='sm:w-2/3'>
-          <h3 className='font-bold text-sm'>
+
+          {/* <h3 className='font-bold text-sm'>
             <Link className='hover:text-blue-500' href="/categories">  Chủ Đề  </Link>
             ➣ 
             {detail.attributes.categories.data.map((citem)=>(
               <TagCate key={citem.id} tagCate={citem}/>
             ))}
-          </h3>
-          <h1 className='text-left font-bold text-2xl my-3'>  
+          </h3> */}
+
+          <SingleNewsTagCate cate={detail}/>
+
+          <h1 className='text-left font-bold text-2xl my-3'>
             {detail.attributes.title}
           </h1>
           <h2 className='font-bold text-sm'>
