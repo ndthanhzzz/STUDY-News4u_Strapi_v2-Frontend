@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { Image } from "antd";
-import { ShowTagCategories } from "../ShowTagCategories/ShowTagCategories";
 import { NewsTagCate } from "../Categories/NewsTagCate";
-
-import { timeAgo } from "../timeAgo";
+import { timeAgo } from "../Module/timeAgo";
 
 
 function ImageNews({imgnews}){

@@ -1,10 +1,7 @@
 import { Image } from 'antd'
 import React from 'react'
-import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
-import { TagCate } from './Allnews'
 import { SectionCate } from '@/pages'
-import { timeAgo } from '../timeAgo'
 
 import { SingleNewsTagCate } from '../Categories/SingleNewsTagCate'
 
@@ -20,15 +17,7 @@ function ShowNews ({detail,imglink,gcate}){
   return(
     <div className='mx-auto sm:mx-40 flex flex-col sm:flex-row  my-10 '> 
       <div className='sm:w-2/3'>
-
-          {/* <h3 className='font-bold text-sm'>
-            <Link className='hover:text-blue-500' href="/categories">  Chủ Đề  </Link>
-            ➣ 
-            {detail.attributes.categories.data.map((citem)=>(
-              <TagCate key={citem.id} tagCate={citem}/>
-            ))}
-          </h3> */}
-
+          {/* Tag Cate */}
           <SingleNewsTagCate cate={detail}/>
 
           <h1 className='text-left font-bold text-2xl my-3'>

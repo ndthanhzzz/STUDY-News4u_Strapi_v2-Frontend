@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Image } from "antd";
-import { ShowTagCategories } from "../ShowTagCategories/ShowTagCategories";
+import { ShowTagCategories } from "../Module/ShowTagCategories";
 
 import { NewsTagCate } from "../Categories/NewsTagCate";
 

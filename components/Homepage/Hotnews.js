@@ -1,31 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import { Image } from 'antd'
-import { ShowTagCategories } from '../ShowTagCategories/ShowTagCategories'
-import { NewsTagCate } from '../Categories/NewsTagCate'
-
-
-function ImagenewsCustom({imgnews}){
-    if(imgnews.attributes.cover.data==null){
-      return(
-        <Image height={200} width={300} className="rounded-xl" src="/news-cover.jpg" alt="cover" loading="lazy"/>
-        )}
-    const url = process.env.NEXT_PUBLIC_HOST_V2 + imgnews.attributes.cover.data.attributes.url
-    return (
-      <Image  height={200} width={300} className="rounded-xl" src={url} alt="cover" loading="lazy"/>
-    )
-}
-
-function ImagenewsFill({imgnews}){
-    if(imgnews.attributes.cover.data==null){
-      return(
-        <Image className="rounded-xl" src="/news-cover.jpg" alt="cover" loading="lazy"/>
-        )}
-    const url = process.env.NEXT_PUBLIC_HOST_V2 + imgnews.attributes.cover.data.attributes.url
-    return (
-      <Image className="rounded-xl" src={url} alt="cover" loading="lazy"/>
-    )
-}
+import { HotnewsTagCate } from '../Categories/NewsTagCate'
+import { ImagenewsFill,
+         ImagenewsCustom } from '../Module/CustomImage' 
 
 const HotnewsLarge = (largenews) => {
     return(
@@ -41,7 +18,7 @@ const HotnewsLarge = (largenews) => {
                     {largenews.largenews.attributes.title}
                 </Link>
                 <div className='my-2'>
-                    <NewsTagCate cate={largenews.largenews}/>
+                    <HotnewsTagCate cate={largenews.largenews}/>
                 </div>
                 <Link href={`/thread/${largenews.largenews.attributes.slug}`}  className='my-5 hover:text-slate-400'>
                     {largenews.largenews.attributes.description}
@@ -65,7 +42,7 @@ const SlideHotnews = (slidehot) => {
                     {slidehot.slidehot.attributes.title}
                 </Link>
                 <div className='my-2'>
-                    <NewsTagCate cate={slidehot.slidehot}/>
+                    <HotnewsTagCate cate={slidehot.slidehot}/>
                 </div>
             </div>
         </div>

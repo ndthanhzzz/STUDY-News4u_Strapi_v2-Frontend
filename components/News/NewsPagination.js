@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Image } from "antd";
-import { ShowTagCategories } from "../ShowTagCategories/ShowTagCategories";
 import { NewsTagCate } from "../Categories/NewsTagCate";
 
 function ImageNews({imgnews}){

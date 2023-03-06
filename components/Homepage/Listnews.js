@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Image } from "antd";
-import { ShowTagCategories } from "../ShowTagCategories/ShowTagCategories";
+import { ShowTagCategories } from "../Module/ShowTagCategories";
 
 function ImageNews({imgnews}){
   if(imgnews.attributes.cover.data==null){
