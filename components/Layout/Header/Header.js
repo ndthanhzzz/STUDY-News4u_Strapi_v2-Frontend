@@ -6,7 +6,7 @@ export default class Header extends Component {
   render() {
     return (
         <>
-        <header className='flex border-solid border-2 border-b-blue-700 bg-white'> 
+        <header className='flex border-solid border-2 border-b-blue-700 bg-white font-arial'> 
             {/* Title */}
             <Link className='my-2 flex justify-start w-1/2 text-black hover:text-slate-400 font-bold text-xl' href='/'>
                 📰 NEWS 4U

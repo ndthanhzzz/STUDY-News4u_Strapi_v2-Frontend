@@ -6,7 +6,7 @@ import { Image } from "antd"
 
 export default function Home() {
   return (
-      <div className="bg-white">
+      <div className="bg-white font-arial">
         <Header/>
         <section className="sm:mx-40">
             {/* Language */}

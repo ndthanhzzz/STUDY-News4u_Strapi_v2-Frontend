@@ -102,7 +102,7 @@ function SectionNews(latestPost){
 
 const Page = ({latestPost,cate,getHot}) => {
   return (
-    <div className="bg-white">
+    <div className="bg-white font-arial">
       <Header/>
       <div className="sm:mx-40">
         {/* Language */}

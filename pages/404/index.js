@@ -7,7 +7,7 @@ export default function index() {
     <div>
         <Header/>
          {/* block news */}
-         <div className="bg-white py-6">
+         <div className="bg-white py-6 font-arial">
               <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
               <div className="flex flex-row flex-wrap">
                   <div className="flex-shrink max-w-full w-full">

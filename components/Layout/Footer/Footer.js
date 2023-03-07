@@ -43,7 +43,7 @@ export class ShowCategoryFooter extends Component {
 export default function Footer() {
   return (
    <>
-     <footer className="text-black border-t-2 border-blue-700">
+     <footer className="text-black border-t-2 border-blue-700 font-arial">
         <div className="mx-auto flex flex-wrap ">
             {/* Title */}
             <div className="w-1/4 sm:w-auto mx-auto p-10 flex flex-col">

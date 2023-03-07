@@ -9,7 +9,7 @@ import { SectionCate } from '@/pages'
 
 const News = ({allnews,cate}) => {
   return(
-    <div className='bg-white'>
+    <div className='bg-white font-arial'>
       <Header/>
       <div className='sm:mx-40'>
         <div>

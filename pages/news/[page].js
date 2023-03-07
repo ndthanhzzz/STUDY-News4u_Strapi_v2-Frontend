@@ -10,7 +10,7 @@ import { SectionCate } from '@/pages'
 
 export default function Pagination({news,gcate}) {
   return (
-    <div className='bg-white'>
+    <div className='bg-white font-arial'>
       <Header/>
       <div className='sm:mx-40'>
         <div>

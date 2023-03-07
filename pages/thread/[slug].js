@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Detail = ({news,gcate}) => {
     return (
-      <div className="bg-white">
+      <div className="bg-white font-arial">
         <Header/>
         <SingleNews news={news} gcate={gcate}/>
         <Footer/>

@@ -1,20 +1,7 @@
 import Link from "next/link";
-import { Image } from "antd";
 import { NewsTagCate } from "../Categories/NewsTagCate";
 import { timeAgo } from "../Module/timeAgo";
-
-
-function ImageNews({imgnews}){
-  if(imgnews.attributes.cover.data==null){
-    return(
-      <Image className='rounded-xl' src="/news-cover.jpg" alt="cover" loading="lazy" />
-      )}
-  const url = process.env.NEXT_PUBLIC_HOST_V2 + imgnews.attributes.cover.data.attributes.url
-  return (
-    <Image className="rounded-xl" src={url} alt="cover" loading="lazy"/>
-
-  )
-}
+import { ImagenewsFill } from "../Module/CustomImage";
 
 export default function Latestnews({ news }) {
   const configTime = new Date(news.attributes.createdAt)
@@ -25,7 +12,7 @@ export default function Latestnews({ news }) {
   return (
     <div className="flex flex-col sm:w-auto p-1">
         <div className="sm:block hidden">
-             <ImageNews key={news.id} imgnews={news}/>
+             <ImagenewsFill imgnews={news}/>
         </div>
         <div className="sm:h-1/6 font-bold leading-tight text-justify hover:text-slate-400">
             <Link href={`/thread/${news.attributes.slug}`}>{news.attributes.title}</Link>

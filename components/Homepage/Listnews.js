@@ -1,18 +1,6 @@
 import Link from "next/link";
-import { Image } from "antd";
 import { ShowTagCategories } from "../Module/ShowTagCategories";
-
-function ImageNews({imgnews}){
-  if(imgnews.attributes.cover.data==null){
-    return(
-      <Image className='rounded-xl' src="/news-cover.jpg" alt="cover" loading="lazy" />
-      )
-  }
-  const url = process.env.NEXT_PUBLIC_HOST_V2 + imgnews.attributes.cover.data.attributes.url
-  return (
-    <Image className="rounded-xl" src={url} alt="cover" loading="lazy"/>
-  )
-}
+import { ImagenewsFill } from "../Module/CustomImage";
 
 // Kiem tra chu de cua bai viet
 function CheckCategories({cate}){
@@ -47,7 +35,7 @@ export default function Listnews({ news }) {
     <>
     <div className="flex sm:flex-row flex-col w-auto p-1 sm:mr-10 mb-5">
         <div className="sm:w-2/5 w-auto">
-             <ImageNews key={news.id} imgnews={news}/>
+             <ImagenewsFill imgnews={news}/>
         </div>
         <div className="sm:w-4/5 w-auto flex sm:flex-col flex-col-reverse px-2">
             {/* In ra chu de sau khi da kiem tra */}

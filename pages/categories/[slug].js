@@ -7,7 +7,7 @@ const Detail = ({cate,news}) => {
     // Check post categories
     if(cate.attributes.posts.data==0){
       return(
-          <div className="bg-white">
+          <div className="bg-white font-arial">
               <Header/>
               <div className="sm:mx-40">
                 <div className="text-black text-center text-xl py-2 font-bold leading-10 sm:bg-white bg-blue-200"> 
@@ -34,7 +34,7 @@ const Detail = ({cate,news}) => {
     )}
 
     return (
-      <div className="bg-white">
+      <div className="bg-white font-arial">
       <Header/>
       <div className="sm:mx-40">
         <div className="text-black text-center text-xl py-2 font-bold leading-10 sm:bg-white bg-blue-200"> 
@@ -54,7 +54,7 @@ export async function getServerSideProps(context) {
   const res = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/categories/${slug}`)
   const datatitle = await res.data.data
 
-  // Get news cach 1
+  // Get news cach 1 (Khong co anh)
         // const datanews = await res.data.data.attributes.posts.data
 
   // Get news cach 2

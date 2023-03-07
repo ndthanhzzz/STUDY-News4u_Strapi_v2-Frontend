@@ -5,17 +5,17 @@ import axios from "axios"
 
 const Page = ({cate}) => {
   return (
-  <div className="bg-white">
-  <Header/>
-  <div className="mx-auto sm:mx-40">
-    <div className="text-black text-center text-xl sm:bg-white bg-blue-200 py-2 font-bold leading-10"> 
-      TIN TỨC THEO CHỦ ĐỀ
+  <div className="bg-white font-arial">
+    <Header/>
+    <div className="mx-auto sm:mx-40">
+      <div className="text-black text-center text-xl sm:bg-white bg-blue-200 py-2 font-bold leading-10"> 
+        TIN TỨC THEO CHỦ ĐỀ
+      </div>
+      {cate.map((citem)=>(
+          <ListCate key={citem.id} getcate={citem}/>
+      ))}
     </div>
-    {cate.map((citem)=>(
-        <ListCate key={citem.id} getcate={citem}/>
-    ))}
-  </div>
-  <Footer/>
+    <Footer/>
   </div>
   )
 }
