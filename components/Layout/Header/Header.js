@@ -6,13 +6,13 @@ export default class Header extends Component {
   render() {
     return (
         <>
-        <header className='flex border-solid border-2 border-b-blue-700 bg-white font-arial'> 
+        <header className='flex flex-row justify-between border-solid border-2 border-b-blue-700 bg-white font-arial'> 
             {/* Title */}
-            <Link className='my-2 flex justify-start w-1/2 text-black hover:text-slate-400 font-bold text-xl' href='/'>
+            <Link className='my-2 p-2 w-auto text-black hover:text-slate-400 font-bold text-xl' href='/'>
                 📰 NEWS 4U
             </Link>
             {/* Search Box */}
-            <div className='w-1/3 sm:w-1/3 flex justify-center'>
+            <div className='w-auto sm:w-1/3 flex justify-center'>
                 <div className="my-2 relative lg:block hidden text-gray-600">
                     <input className="border-2 border-gray-300 bg-white h-10 pl-2 pr-12 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="Tìm kiếm bài viết,..." />
                     <button type="submit" className="absolute right-0 top-0 mt-3 mr-2">
@@ -23,8 +23,7 @@ export default class Header extends Component {
                 </div>
             </div>
             {/* Login */}
-            <div className='my-2 text-black w-1/2 flex justify-end '>
-                <Image className='lg:block hidden' src="/user.png" alt="me" width="40" height={'20'} loading="lazy"/>
+            <div className='my-2  p-2  text-black w-auto'>
                 <Link href='/sign-in' className='mx-2 my-1.5 hover:text-slate-400'>  Login </Link>
                 <Link href='/sign-up' className='mx-2 my-1.5 hover:text-slate-400'>  Sign Up </Link>
             </div>

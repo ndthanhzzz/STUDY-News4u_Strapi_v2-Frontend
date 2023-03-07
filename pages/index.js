@@ -79,7 +79,7 @@ function SectionNews(latestPost){
           </div>
           <div className="text-center my-5">
             <Link className="text-xl hover:text-blue-400" href={`/news`}>
-            📚 XEM THÊM CÁC TIN TỨC KHÁC...
+            📚 XEM CÁC TIN TỨC KHÁC...
             </Link>
           </div>
         </div>

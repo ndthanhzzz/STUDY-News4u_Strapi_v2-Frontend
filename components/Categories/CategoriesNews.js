@@ -9,8 +9,8 @@ export default function CategoriesNews({cnews}) {
   return (
     <div className='flex flex-row justify-between'>
       <div className='sm:w-auto w-3/5 bg-white m-2 '>
-          <div className="text-lg text-justify font-bold leading-tight mb-2 hover:text-slate-400">
-              <Link href={`/thread/${cnews.attributes.slug}`}>
+          <div className="text-lg sm: text-justify font-bold leading-tight mb-2 hover:text-slate-400">
+              <Link className='description-title' href={`/thread/${cnews.attributes.slug}`}>
                   {cnews.attributes.title}
               </Link>
           </div>
