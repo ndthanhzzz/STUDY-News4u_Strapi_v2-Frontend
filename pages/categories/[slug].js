@@ -2,12 +2,16 @@ import Footer from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
 import CategoriesNews from "@/components/Categories/CategoriesNews";
 import axios from "axios";
+import Head from "next/head";
 
 const Detail = ({cate,news}) => {
     // Check post categories
     if(cate.attributes.posts.data==0){
       return(
           <div className="bg-white font-arial">
+              <Head>
+                <title> News4u - {cate.attributes.title} </title>
+              </Head>
               <Header/>
               <div className="sm:mx-40">
                 <div className="text-black text-center text-xl py-2 font-bold leading-10 sm:bg-white bg-blue-200"> 
@@ -35,6 +39,9 @@ const Detail = ({cate,news}) => {
 
     return (
       <div className="bg-white font-arial">
+      <Head>
+        <title> News4u - {cate.attributes.title} </title>
+      </Head>
       <Header/>
       <div className="sm:mx-40">
         <div className="text-black text-center text-xl py-2 font-bold leading-10 sm:bg-white bg-blue-200"> 

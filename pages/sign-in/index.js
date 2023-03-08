@@ -2,11 +2,14 @@ import React from 'react'
 import Header from '../../components/Layout/Header/Header'
 import Footer from '../../components/Layout/Footer/Footer'
 import Link from 'next/link'
-
+import Head from 'next/head'
 
 export default function index() {
   return (
     <div>
+        <Head>
+            <title>News4u - Sign In</title>
+        </Head>
       <Header/>
       <div className="relative min-h-screen flex font-arial">
         <div className="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 bg-white">

@@ -1,10 +1,14 @@
 import React from 'react'
 import Header from '@/components/Layout/Header/Header';
 import Footer from '@/components/Layout/Footer/Footer';
+import Head from 'next/head';
 
 export default function index() {
   return (
     <div>
+        <Head>
+          <title> Error </title>
+        </Head>
         <Header/>
          {/* block news */}
          <div className="bg-white py-6 font-arial">

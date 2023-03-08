@@ -3,10 +3,14 @@ import Header from "@/components/Layout/Header/Header";
 import Link from "next/link";
 import { Button } from "antd";
 import { Image } from "antd"
+import Head from "next/head";
 
 export default function Home() {
   return (
       <div className="bg-white font-arial">
+        <Head>
+            <title> News4u - About </title>
+        </Head>
         <Header/>
         <section className="sm:mx-40">
             {/* Language */}

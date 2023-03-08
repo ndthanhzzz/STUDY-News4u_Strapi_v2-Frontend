@@ -5,10 +5,14 @@ import SlideCate from "@/components/ListCate/SlideCate"
 import axios from "axios"
 import Link from "next/link"
 import { Button } from "antd"
+import Head from "next/head"
 
 const Page = ({latestPost,cate}) => {
   return (
   <div className="bg-white font-arial">
+    <Head>
+        <title> News4u - News </title>
+    </Head>
     <Header/>
     <div className="sm:mx-40">
       {/* Language */}

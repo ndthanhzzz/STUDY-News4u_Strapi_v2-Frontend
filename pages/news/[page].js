@@ -4,13 +4,17 @@ import Footer from '@/components/Layout/Footer/Footer'
 import axios from 'axios'
 import NewsPagination from '@/components/News/NewsPagination'
 import Link from 'next/link'
+import Head from 'next/head'
 
 import { SectionCate } from '@/pages'
 
 
-export default function Pagination({news,gcate}) {
+export default function Pagination({news,gcate,number}) {
   return (
     <div className='bg-white font-arial'>
+      <Head>
+            <title> News4u - Page {number}</title>
+      </Head>
       <Header/>
       <div className='sm:mx-40'>
         <div>
@@ -50,10 +54,13 @@ export async function getServerSideProps(context) {
 
     const rescate = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/categories?populate=*`)
     const cate = await rescate.data.data
+    
+    const number = page;
     return{
       props: {
         news: data,
         gcate:cate,
+        number: number,
       }
     }
 }

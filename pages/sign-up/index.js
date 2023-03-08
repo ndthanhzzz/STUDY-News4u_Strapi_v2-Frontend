@@ -1,10 +1,14 @@
 import React from 'react'
 import Header from '@/components/Layout/Header/Header';
 import Footer from '@/components/Layout/Footer/Footer';
+import Head from 'next/head';
 
 export default function index() {
   return (
     <div>
+    <Head>
+        <title>News4u - Sign Up</title>
+    </Head>
     <Header/>
     {/* component */}
     <section className="bg-white dark:bg-gray-900 font-arial">

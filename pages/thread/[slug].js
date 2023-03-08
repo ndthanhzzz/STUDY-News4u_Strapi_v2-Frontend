@@ -2,10 +2,14 @@ import Footer from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
 import SingleNews from "@/components/News/SingleNews";
 import axios from "axios";
+import Head from "next/head";
 
 const Detail = ({news,gcate}) => {
     return (
       <div className="bg-white font-arial">
+        <Head>
+          <title>News4u - {news.attributes.title}</title>
+        </Head>
         <Header/>
         <SingleNews news={news} gcate={gcate}/>
         <Footer/>

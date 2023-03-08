@@ -5,11 +5,14 @@ import React from 'react'
 import axios from 'axios'
 import Link from 'next/link'
 import { SectionCate } from '@/pages'
-
+import Head from 'next/head'
 
 const News = ({allnews,cate}) => {
   return(
     <div className='bg-white font-arial'>
+      <Head>
+            <title> News4u - News </title>
+      </Head>
       <Header/>
       <div className='sm:mx-40'>
         <div>

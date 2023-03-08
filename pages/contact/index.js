@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '@/components/Layout/Header/Header';
 import Footer from '@/components/Layout/Footer/Footer';
+import Head from 'next/head';
 
 import {   
         SendOutlined,  
@@ -12,6 +13,9 @@ import {
 export default function index() {
   return (
     <div>
+        <Head>
+            <title> News4u - Contact </title>
+        </Head>
         <Header/>
         <section className="text-gray-600 body-font relative font-arial">
             <div className="absolute inset-0 bg-gray-300">

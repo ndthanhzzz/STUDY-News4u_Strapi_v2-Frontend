@@ -6,6 +6,7 @@ import Listnews from "@/components/Homepage/Listnews"
 import axios from "axios"
 import Link from "next/link"
 import { Button } from "antd"
+import Head from "next/head"
 
 import { HotnewsLarge,
          SlideHotnews
@@ -103,6 +104,9 @@ function SectionNews(latestPost){
 const Page = ({latestPost,cate,getHot}) => {
   return (
     <div className="bg-white font-arial">
+      <Head>
+        <title>News4u - Home Page</title>
+      </Head>
       <Header/>
       <div className="sm:mx-40">
         {/* Language */}
