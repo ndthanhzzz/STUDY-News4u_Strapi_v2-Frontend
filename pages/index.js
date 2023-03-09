@@ -26,7 +26,7 @@ function SectionCate(cate){
               Xem chi tiết
         </Link>
       </div>
-      <div className="flex flex-row overflow-x-auto">
+      <div className="flex flex-row overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 scrollbar-thumb-rounded">
         {cate.cate.map((citem)=>(
             <SlideCate key={citem.id} getcate={citem}/>
         ))}
@@ -37,30 +37,44 @@ function SectionCate(cate){
 
 function SectionHotNews(Hotnews){
   return (
-    <div className="border-y-4 border-indigo-500">
-      <div className="text-black sm:text-left text-center text-base py-2 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200">       
-      🚩 HOT NEWS - TOP LƯỢT XEM
-      </div>
-      <div className="flex flex-col m-2 text-justify">
-        <div className="flex sm:flex-row flex-col sm:m-0 h-auto">
-          <div className="w-auto sm:w-2/3 sm:mr-2 mr-auto mb-5">
-            {Hotnews.Hotnews.slice(0,1).map((item)=>(
-                <HotnewsLarge key={item.id} largenews={item}/>
-            ))} 
+      <div className="flex sm:flex-row flex-col-reverse justify-between h-auto">
+         {/* List news */}
+        <div className="sm:w-4/6 w-auto h-auto">
+            <div className="text-black sm:text-left text-center py-2 mb-5 text-base  font-bold leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
+            🚩 TOP LƯỢT XEM
+            </div>
+            <div className="flex flex-col m-t-2 text-justify">
+              <div className="flex sm:flex-row flex-col h-auto">
+                <div className="w-auto sm:w-2/3 sm:mr-2 mr-auto mb-5">
+                  {Hotnews.Hotnews.slice(0,1).map((item)=>(
+                      <HotnewsLarge key={item.id} largenews={item}/>
+                  ))} 
+                </div>
+                <div className="w-auto sm:w-1/3 mr-auto mb-5">
+                  {Hotnews.Hotnews.slice(1,2).map((item)=>(
+                      <HotnewsLarge key={item.id} largenews={item}/>
+                  ))} 
+                </div>
+              </div>
+              <div className="flex flex-row overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 scrollbar-thumb-rounded">
+                  {Hotnews.Hotnews.slice(2,10).map((item)=>(
+                      <SlideHotnews key={item.id} slidehot={item}/>
+                  ))} 
+              </div>
+            </div>
+        </div>
+         {/* Latest news */}
+        <div className="sm:w-1/4 w-auto sm:mb-5 sm:bg-white bg-gray-200">
+          <div className="text-black text-center text-base py-2 mb-5 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
+          ⏲ TIN TỨC MỚI CẬP NHẬT
           </div>
-          <div className="w-auto sm:w-1/3 sm:ml-2 mr-auto mb-5">
-            {Hotnews.Hotnews.slice(1,2).map((item)=>(
-                <HotnewsLarge key={item.id} largenews={item}/>
-            ))} 
+          <div className="inset-border p-4">
+              {Hotnews.Hotnews.slice(0,7).map((item)=>(
+                <Latestnews key={item.id} news={item}/>
+              ))}
           </div>
         </div>
-        <div className="flex flex-row overflow-x-auto">
-            {Hotnews.Hotnews.slice(2,10).map((item)=>(
-                <SlideHotnews key={item.id} slidehot={item}/>
-            ))} 
-        </div>
       </div>
-    </div>
   )
 }
 
@@ -70,29 +84,27 @@ function SectionNews(latestPost){
       <div className="flex sm:flex-wrap flex-wrap-reverse justify-around h-auto">
          {/* List news */}
         <div className="sm:w-3/5 w-auto h-auto">
-          <div className="text-black text-center text-base py-2 mb-5 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200">       
-          📄 NHỮNG TIN TỨC CHÍNH
+          <div className="text-black text-center text-base py-2 mb-5 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
+          📄 TIN TỨC CHÍNH
           </div>
           <div className="sm:border-dashed sm:border-r-2 border-indigo-600">
-            {latestPost.latestPost.slice(5,).map((item)=>(
+            {latestPost.latestPost.slice(5,15).map((item)=>(
                 <Listnews key={item.id} news={item}/>
             ))}
           </div>
           <div className="text-center my-5">
-            <Link className="text-xl hover:text-blue-400" href={`/news`}>
-            📚 XEM CÁC TIN TỨC KHÁC...
+            <Link className="text-xl font-bold hover:text-blue-400" href={`/news`}>
+            📚 Xem Thêm ...
             </Link>
           </div>
         </div>
          {/* Latest news */}
         <div className="sm:w-3/12 w-auto sm:mb-5 sm:bg-white bg-gray-200">
-          <div className="text-black text-center text-base  py-2 mb-5  font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200">       
-          ⏲ LATEST NEWS - TIN TỨC MỚI
+          <div className="text-black text-center text-base  py-2 mb-5  font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
+            KHÁC
           </div>
-          <div className="overflow-y-auto h-auto">
-              {latestPost.latestPost.slice(0,5).map((item)=>(
-                <Latestnews key={item.id} news={item}/>
-              ))}
+          <div>
+              -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
           </div>
         </div>
       </div>

@@ -1,18 +1,6 @@
 import Link from "next/link";
-import { Image } from "antd";
 import { NewsTagCate } from "../Categories/NewsTagCate";
-
-function ImageNews({imgnews}){
-  if(imgnews.attributes.cover.data==null){
-    return(
-      <Image className='rounded-xl' src="/news-cover.jpg" alt="cover" loading="lazy" />
-      )}
-  const url = process.env.NEXT_PUBLIC_HOST_V2 + imgnews.attributes.cover.data.attributes.url
-  return (
-    <Image className="rounded-xl" src={url} alt="cover" loading="lazy"/>
-
-  )
-}
+import { ImagenewsFill } from "../Module/CustomImage";
 
 export default function NewsPagination({ news }) {
   const configTime = new Date(news.attributes.createdAt)
@@ -22,7 +10,7 @@ export default function NewsPagination({ news }) {
   return (
     <div className="flex sm:flex-row flex-col justify-center sm:w-auto p-1">
         <div className="sm:w-1/4 w-auto mx-2">
-             <ImageNews key={news.id} imgnews={news}/>
+             <ImagenewsFill imgnews={news}/>
         </div>
         <div className="sm:w-1/2 w-auto mx-2 flex sm:flex-col flex-col justify-around">
           <div className="sm:h-2/3 h-auto">

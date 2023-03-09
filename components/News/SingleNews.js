@@ -1,17 +1,15 @@
-import { Image } from 'antd'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import { Image } from 'antd'
 import { SectionCate } from '@/pages'
-
 import { SingleNewsTagCate } from '../Categories/SingleNewsTagCate'
+import { DiscussionEmbed } from 'disqus-react';
+
 
 function ShowNews ({detail,imglink,gcate}){
-  // console.log(detail.attributes.categories.data)
   const configTime = new Date(detail.attributes.createdAt)
   const getTime = configTime.toLocaleTimeString(); //Time String
   const getDate = configTime.toLocaleDateString(); //Date String
-
-  // const ago = timeAgo(new Date(configTime))
   const url = imglink;
 
   return(
@@ -29,13 +27,20 @@ function ShowNews ({detail,imglink,gcate}){
             👁 {detail.attributes.views}
           </h2>
           <br/>
-          <ReactMarkdown className='text-justify px-10 indent-10'>
+          <ReactMarkdown className='text-justify px-10 indent-10 mb-10'>
             {detail.attributes.content}
           </ReactMarkdown>
-          <div className='flex justify-center my-10'>
-            ----------------- END -----------------
-          </div>
-
+    
+          <DiscussionEmbed
+              shortname='news4u-demo'
+              config={
+                  {
+                    identifier: detail.attributes.slug,
+                    title: detail.attributes.title,
+                    language: 'vi_VN'
+                  }
+              }
+          />
       </div>
       <div className='sm:w-1/3 flex flex-col mx-5 '>
           <div>

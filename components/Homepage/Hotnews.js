@@ -38,7 +38,7 @@ const SlideHotnews = (slidehot) => {
             <br/>
             </div>
             <div className="text-black text-sm">
-                <Link href={`/thread/${slidehot.slidehot.attributes.slug}`}  className='font-bold hover:text-slate-400'>
+                <Link href={`/thread/${slidehot.slidehot.attributes.slug}`}  className='font-bold hover:text-slate-400 description-title'>
                     {slidehot.slidehot.attributes.title}
                 </Link>
                 <div className='my-2'>

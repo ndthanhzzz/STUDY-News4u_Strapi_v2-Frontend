@@ -20,7 +20,7 @@ export default function Pagination({news,gcate,number}) {
         <div>
           <SectionCate key={gcate.id} cate={gcate}/>
         </div>
-        <div className="text-black text-center text-xl py-2 mb-5 font-bold leading-10"> 
+        <div className="text-black text-center text-xl py-2 mb-5 font-bold leading-10 sm:bg-white bg-blue-200 rounded-b-full"> 
             DANH SÁCH TIN TỨC
         </div>
         <div className="flex flex-row flex-shrink flex-wrap mx-3">
