@@ -45,7 +45,7 @@ function SectionHotNews(Hotnews){
             </div>
             <div className="flex flex-col m-t-2 text-justify">
               <div className="flex sm:flex-row flex-col h-auto">
-                <div className="w-auto sm:w-2/3 sm:mr-2 mr-auto mb-5">
+                <div className="w-auto sm:w-2/3 sm:mr-5 mr-auto mb-5">
                   {Hotnews.Hotnews.slice(0,1).map((item)=>(
                       <HotnewsLarge key={item.id} largenews={item}/>
                   ))} 
@@ -81,9 +81,9 @@ function SectionHotNews(Hotnews){
 function SectionNews(latestPost){
   return(
     <div>
-      <div className="flex sm:flex-wrap flex-wrap-reverse justify-around h-auto">
+      <div className="flex sm:flex-wrap flex-wrap-reverse justify-between h-auto">
          {/* List news */}
-        <div className="sm:w-3/5 w-auto h-auto">
+        <div className="sm:w-4/6 w-auto h-auto">
           <div className="text-black text-center text-base py-2 mb-5 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
           📄 TIN TỨC CHÍNH
           </div>
@@ -99,7 +99,7 @@ function SectionNews(latestPost){
           </div>
         </div>
          {/* Latest news */}
-        <div className="sm:w-3/12 w-auto sm:mb-5 sm:bg-white bg-gray-200">
+        <div className="sm:w-1/4 w-auto sm:mb-5 sm:bg-white bg-gray-200">
           <div className="text-black text-center text-base  py-2 mb-5  font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
             KHÁC
           </div>

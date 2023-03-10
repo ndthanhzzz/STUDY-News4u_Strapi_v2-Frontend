@@ -4,7 +4,7 @@ import { ImagenewsCategories } from '../Module/CustomImage';
 
 export default function CategoriesNews({cnews}) {
   const configTime = new Date(cnews.attributes.createdAt)
-  const getTime = configTime.toLocaleTimeString(); //Time String
+  // const getTime = configTime.toLocaleTimeString(); //Time String
   const getDate = configTime.toLocaleDateString(); //Date String
   return (
     <div className='flex flex-row justify-between'>

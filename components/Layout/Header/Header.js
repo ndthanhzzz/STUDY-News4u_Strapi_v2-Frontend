@@ -8,11 +8,12 @@ export default class Header extends Component {
         <>
         <header className='flex flex-row justify-between border-solid border-2 border-b-blue-700 bg-white font-arial'> 
             {/* Title */}
-            <Link className='my-2 p-2 w-auto text-black hover:text-slate-400 font-bold text-xl' href='/'>
-                📰 NEWS 4U
+            <Link className=' flex flex-row my-2 p-2 w-auto text-black hover:text-slate-400 font-bold text-xl' href='/'>
+                <Image src="/favicon.ico" height={20} width={50} alt='cover'/>
+                <div className='p-3'> NEWS 4U </div>
             </Link>
             {/* Search Box */}
-            <div className='w-auto sm:w-1/3 flex justify-center'>
+            <div className='w-auto sm:w-1/3 flex justify-center p-3'>
                 <div className="my-2 relative lg:block hidden text-gray-600">
                     <input className="border-2 border-gray-300 bg-white h-10 pl-2 pr-12 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="Tìm kiếm bài viết,..." />
                     <button type="submit" className="absolute right-0 top-0 mt-3 mr-2">
@@ -23,9 +24,9 @@ export default class Header extends Component {
                 </div>
             </div>
             {/* Login */}
-            <div className='my-2  p-2  text-black w-auto'>
-                <Link href='/sign-in' className='mx-2 my-1.5 hover:text-slate-400'>  Login </Link>
-                <Link href='/sign-up' className='mx-2 my-1.5 hover:text-slate-400'>  Sign Up </Link>
+            <div className='flex flex-row justify-center text-black w-auto'>
+                <Link href='/sign-in' className='pt-8 px-2 hover:text-slate-400'>  Login </Link>
+                <Link href='/sign-up' className='pt-8 px-2 hover:text-slate-400'>  Sign Up </Link>
             </div>
         </header>
         </>

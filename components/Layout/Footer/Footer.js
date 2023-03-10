@@ -32,7 +32,7 @@ export class ShowCategoryFooter extends Component {
             }
             <div className='hover:text-slate-400 py-3'>
                 <Link  href={`/categories/`}>
-                    ALL
+                    ...
                 </Link>
             </div>
             </>

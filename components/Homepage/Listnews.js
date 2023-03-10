@@ -33,7 +33,7 @@ export default function Listnews({ news }) {
 
   return (
     <>
-    <div className="flex flex-row w-auto p-1 sm:mr-10 mb-5">
+    <div className="flex flex-row w-auto p-1 sm:mr-5 mb-5">
         <div className="sm:w-2/5 w-1/3">
              <ImagenewsFill imgnews={news}/>
         </div>
