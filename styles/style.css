@@ -58,3 +58,14 @@
   border-style: inset;
 }
 
+/* Dropdown */
+.dropdown:hover .dropdown-menu {
+  overflow: visible !important;
+  position: absolute;
+  z-index: 100;
+  display: block;
+}
+
+.font-small{
+  font-size: smaller;
+}
