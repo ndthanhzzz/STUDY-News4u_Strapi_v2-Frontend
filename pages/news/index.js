@@ -7,7 +7,9 @@ import { fetcher } from '@/api/api'
 import { SectionCate } from '@/pages'
 import Head from 'next/head'
 
+
 const News = ({allnews,cate}) => {
+  console.log(allnews.meta.pagination.pageCount)
   return(
     <div className='bg-white font-arial'>
       <Head>

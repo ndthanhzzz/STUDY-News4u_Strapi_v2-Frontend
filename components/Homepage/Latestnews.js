@@ -11,7 +11,7 @@ export default function Latestnews({ news }) {
   return (
     <div className="sm:w-auto mb-5">
         <div className="w-auto flex flex-col justify-between sm:ml-2">
-          <div className=" font-bold leading-tight text-justify hover:text-slate-400 description-title">
+          <div className=" font-bold leading-tight text-left hover:text-slate-400 description-title">
               <Link href={`/thread/${news.attributes.slug}`}>{news.attributes.title}</Link>
           </div>
           <div className="text-gray-500">
