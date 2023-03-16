@@ -1,21 +1,21 @@
 import Footer from "@/components/Layout/Footer/Footer";
 import Header from "@/components/Layout/Header/Header";
 import CategoriesNews from "@/components/Categories/CategoriesNews";
-import axios from "axios";
+import { fetcher } from "@/api/api";
 import Head from "next/head";
 
 const Detail = ({cate,news}) => {
     // Check post categories
-    if(cate.attributes.posts.data==0){
+    if(cate.data.attributes.posts.data==0){
       return(
           <div className="bg-white font-arial">
               <Head>
-                <title> News4u - {cate.attributes.title} </title>
+                <title> News4u - {cate.data.attributes.title} </title>
               </Head>
               <Header/>
               <div className="sm:mx-40">
                 <div className="text-black text-center text-xl py-2 font-bold leading-10 sm:bg-white bg-blue-200"> 
-                  {cate.attributes.title}
+                  {cate.data.attributes.title}
                 </div>
                 <div className="bg-white py-6">
                     <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
@@ -40,14 +40,14 @@ const Detail = ({cate,news}) => {
     return (
       <div className="bg-white font-arial">
       <Head>
-        <title> News4u - {cate.attributes.title} </title>
+        <title> News4u - {cate.data.attributes.title} </title>
       </Head>
       <Header/>
       <div className="sm:mx-40">
         <div className="text-black text-center text-xl py-2 font-bold leading-10 sm:bg-white bg-blue-200"> 
-          {cate.attributes.title}
+          {cate.data.attributes.title}
         </div>
-        {news.map((item)=>(
+        {news.data.map((item)=>(
             <CategoriesNews key={item.id} cnews={item}/>
         ))}
       </div>
@@ -58,16 +58,11 @@ const Detail = ({cate,news}) => {
 
 export async function getServerSideProps(context) {
   const {slug} = context.query
-  const res = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/categories/${slug}`)
-  const datatitle = await res.data.data
-
+  const datatitle = await fetcher(process.env.NEXT_PUBLIC_API_HOST_V2+`/categories/${slug}`)
   // Get news cach 1 (Khong co anh)
         // const datanews = await res.data.data.attributes.posts.data
-
   // Get news cach 2
-        const resPost = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/posts?populate=*&sort=createdAt%3Adesc&filters[categories][slug][$eq]=${slug}`)
-        const datanews = await resPost.data.data
-
+        const datanews = await fetcher(process.env.NEXT_PUBLIC_API_HOST_V2+`/posts?populate=*&sort=createdAt%3Adesc&filters[categories][slug][$eq]=${slug}`)
   return{
     props: {
       cate: datatitle,

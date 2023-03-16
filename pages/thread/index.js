@@ -85,7 +85,7 @@ function SectionNews(latestPost){
          {/* List news */}
         <div className="sm:w-4/6 w-auto h-auto">
           <div className="text-black text-center text-base py-2 mb-5 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
-          📄 TIN TỨC CHÍNHSectionNews
+          📄 TIN TỨC CHÍNH
           </div>
           <div className="sm:border-dashed sm:border-r-2 border-indigo-600">
             {latestPost.latestPost.slice(5,15).map((item)=>(
