@@ -3,11 +3,10 @@ import Footer from "@/components/Layout/Footer/Footer"
 import Header from "@/components/Layout/Header/Header"
 import SlideCate from "@/components/ListCate/SlideCate"
 import Listnews from "@/components/Homepage/Listnews"
-import axios from "axios"
 import Link from "next/link"
 import { Button } from "antd"
 import Head from "next/head"
-
+import { fetcher } from "@/api/api"
 
 import { HotnewsLarge,
          SlideHotnews
@@ -46,7 +45,7 @@ function SectionHotNews(Hotnews){
             </div>
             <div className="flex flex-col m-t-2 text-justify">
               <div className="flex sm:flex-row flex-col h-auto">
-                <div className="w-auto sm:w-2/3 sm:mr-2 mr-auto mb-5">
+                <div className="w-auto sm:w-2/3 sm:mr-5 mr-auto mb-5">
                   {Hotnews.Hotnews.slice(0,1).map((item)=>(
                       <HotnewsLarge key={item.id} largenews={item}/>
                   ))} 
@@ -82,11 +81,11 @@ function SectionHotNews(Hotnews){
 function SectionNews(latestPost){
   return(
     <div>
-      <div className="flex sm:flex-wrap flex-wrap-reverse justify-around h-auto">
+      <div className="flex sm:flex-wrap flex-wrap-reverse justify-between h-auto">
          {/* List news */}
-        <div className="sm:w-3/5 w-auto h-auto">
+        <div className="sm:w-4/6 w-auto h-auto">
           <div className="text-black text-center text-base py-2 mb-5 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
-          📄 TIN TỨC CHÍNH
+          📄 TIN TỨC CHÍNHSectionNews
           </div>
           <div className="sm:border-dashed sm:border-r-2 border-indigo-600">
             {latestPost.latestPost.slice(5,15).map((item)=>(
@@ -100,7 +99,7 @@ function SectionNews(latestPost){
           </div>
         </div>
          {/* Latest news */}
-        <div className="sm:w-3/12 w-auto sm:mb-5 sm:bg-white bg-gray-200">
+        <div className="sm:w-1/4 w-auto sm:mb-5 sm:bg-white bg-gray-200">
           <div className="text-black text-center text-base  py-2 mb-5  font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
             KHÁC
           </div>
@@ -121,20 +120,16 @@ const Page = ({latestPost,cate,getHot}) => {
         <title>News4u - Home Page</title>
       </Head>
       <Header/>
+      
       <div className="sm:mx-40">
-        {/* Language */}
         <nav className="my-5">
           <span className="mr-2"><Button href="/location-vn">Vietnam</Button></span>
           <span className="ml-2"><Button href="/location-global">Global</Button></span>
         </nav>
         <div className="flex flex-col ">
-        {/* Section 1 */}
-          <SectionCate key={cate.id} cate={cate}/>
-        {/* Section 2 */}
-          <SectionHotNews key={getHot.id} Hotnews={getHot}/>
-        {/* Section 3 */}
-          <SectionNews key={latestPost.id} latestPost={latestPost}/>
-        {/* ---------- */}
+          <SectionCate key={cate.id} cate={cate.data}/>
+          <SectionHotNews key={getHot.id} Hotnews={getHot.data}/>
+          <SectionNews key={latestPost.id} latestPost={latestPost.data}/>
         </div>
       </div>
       <Footer/>
@@ -145,14 +140,11 @@ export default Page
 
 
 Page.getInitialProps = async (ctx) => {
-  const rescate = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/categories?populate=*`)
-  const cate = await rescate.data.data
+  const cate = await fetcher(process.env.NEXT_PUBLIC_API_HOST_V2+`/categories?populate=*`)
   // Sort by views
-  const resHotnews = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/posts?sort=views%3Adesc&populate=*`)
-  const getHot = await resHotnews.data.data
+  const getHot = await fetcher(process.env.NEXT_PUBLIC_API_HOST_V2+`/posts?sort=views%3Adesc&populate=*`)
   // Sort by time
-  const respost = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/posts?sort=createdAt%3Adesc&populate=*`)
-  const latestPost = await respost.data.data
+  const latestPost = await fetcher(process.env.NEXT_PUBLIC_API_HOST_V2+`/posts?sort=createdAt%3Adesc&populate=*`)
   return { 
     latestPost,
     cate,

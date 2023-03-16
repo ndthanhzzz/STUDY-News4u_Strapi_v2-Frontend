@@ -1,8 +1,8 @@
 import Footer from "@/components/Layout/Footer/Footer"
 import Header from "@/components/Layout/Header/Header"
 import ListCate from "@/components/ListCate/ListCate"
-import axios from "axios"
 import Head from "next/head"
+import { fetcher } from "@/api/api"
 
 const Page = ({cate}) => {
   return (
@@ -15,7 +15,7 @@ const Page = ({cate}) => {
       <div className="text-black text-center text-xl sm:bg-white bg-blue-200 py-2 font-bold leading-10"> 
         TIN TỨC THEO CHỦ ĐỀ
       </div>
-      {cate.map((citem)=>(
+      {cate.data.map((citem)=>(
           <ListCate key={citem.id} getcate={citem}/>
       ))}
     </div>
@@ -25,8 +25,7 @@ const Page = ({cate}) => {
 }
 
 Page.getInitialProps = async (ctx) => {
-  const rescate = await axios.get(process.env.NEXT_PUBLIC_API_HOST_V2+`/categories?populate[posts][populate]=*`)
-  const cate = await rescate.data.data
+  const cate = await fetcher(process.env.NEXT_PUBLIC_API_HOST_V2+`/categories?populate[posts][populate]=*`)
   return { 
     cate,
   }
