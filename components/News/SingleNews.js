@@ -18,7 +18,7 @@ function ShowNews ({detail,imglink,gcate}){
           {/* Tag Cate */}
           <SingleNewsTagCate cate={detail}/>
 
-          <h1 className='text-left font-bold text-2xl my-3'>
+          <h1 className='text-justify font-bold text-2xl my-3'>
             {detail.attributes.title}
           </h1>
           <h2 className='font-bold text-sm'>
