@@ -28,6 +28,7 @@
     "meilisearch": "^0.31.1",
     "next": "13.1.1",
     "nextjs": "^0.0.3",
+    "nextjs-progressbar": "^0.0.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-instantsearch-dom": "^6.39.0",
