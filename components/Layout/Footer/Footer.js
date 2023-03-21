@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="w-1/4 sm:w-auto flex-grow flex justify-center text-left p-5">
                 <div className='text-black mx-auto'>
                     <Link className='text-blue-500 font-bold' href={`/categories/`}>
-                        Categories
+                        Chủ đề
                     </Link>
                     <ShowCategoryFooter/>
                 </div>
