@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../../components/Layout/Header/Header'
-import Footer from '../../components/Layout/Footer/Footer'
 import Link from 'next/link'
 import Head from 'next/head'
 import { Image } from 'antd'
@@ -11,25 +9,27 @@ export default function index() {
         <Head>
             <title>News4u - Sign In</title>
         </Head>
-      <Header/>
-      <div className="relative min-h-screen flex font-arial">
+      <section className="relative min-h-screen flex font-arial">
         <div className="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 bg-white">
             <div className="sm:w-1/2 xl:w-3/5 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden bg-purple-900 text-white bg-no-repeat bg-cover relative" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1579451861283-a2239070aaa9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)'}}>
                 <div className="absolute bg-gradient-to-b from-blue-400 to-blue-200 opacity-75 inset-0 z-0" />
                 <div className="w-full  max-w-md z-10">
-                    <div className="sm:text-4xl xl:text-5xl font-bold leading-tight mb-6"> News </div>
-                    <div className="sm:text-sm xl:text-md text-gray-200 font-normal"> 
-                            Giới thiệu ngắn
-                    </div>
+                    <div className="sm:text-4xl xl:text-5xl font-bold leading-tight mb-6">   New4u </div>
+                    <Link href="/"  className="sm:text-sm xl:text-md text-gray-200 font-normal hover:font-bold"> 
+                            Trang chủ
+                    </Link>
                 </div>
             </div>
             <div className="md:flex md:items-center md:justify-center w-full sm:w-auto md:h-full xl:w-2/5 p-8  md:p-10 lg:p-14 sm:rounded-lg md:rounded-none bg-white">
                 <div className="max-w-md w-full space-y-8">
-                    <div className="text-center">
-                        <h2 className="mt-6 text-3xl font-bold text-gray-900">
+                    <div className="">
+                        <Link href="/"  className="max-lg:block hidden sm:text-sm xl:text-md text-gray-500 font-normal hover:font-bold text-left"> 
+                                    Trang chủ
+                        </Link>
+                        <h2 className="mt-6 text-3xl font-bold text-gray-900 text-center">
                             Chào mừng bạn, hãy đăng nhập với chúng tôi!
                         </h2>
-                        <p className="mt-2 text-sm text-gray-500">Đăng nhập bằng thông tin của bạn</p>
+                        <p className="mt-2 text-sm text-gray-500 text-center">Đăng nhập bằng thông tin của bạn</p>
                     </div>
                     <div className="flex items-center justify-center space-x-2">
                         <span className="h-px w-16 bg-gray-200" />
@@ -79,10 +79,9 @@ export default function index() {
                     </p>
                     </form>
                 </div>
-                </div>
             </div>
         </div>
-      <Footer/>
+    </section>
     </div>
   )
 }
