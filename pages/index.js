@@ -74,7 +74,7 @@ function SectionHotNews(Hotnews){
             <SyncOutlined spin className="mx-2"/>
           </div>
           <div className="inset-border p-4">
-              {Hotnews.Hotnews.slice(0,7).map((item)=>(
+              {Hotnews.latestPost.slice(0,7).map((item)=>(
                 <Latestnews key={item.id} news={item}/>
               ))}
           </div>
@@ -132,9 +132,9 @@ const Page = ({latestPost,cate,getHot}) => {
           <span className="ml-2"><Button href="/location-global">Global</Button></span>
         </nav>
         <div className="flex flex-col ">
-          <SectionCate key={cate.id} cate={cate.data}/>
-          <SectionHotNews key={getHot.id} Hotnews={getHot.data}/>
-          <SectionNews key={latestPost.id} latestPost={latestPost.data}/>
+          <SectionCate cate={cate.data}/>
+          <SectionHotNews  Hotnews={getHot.data} latestPost={latestPost.data} />
+          <SectionNews latestPost={latestPost.data}/>
         </div>
       </div>
       <Footer/>

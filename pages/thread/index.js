@@ -8,6 +8,10 @@ import { Button } from "antd"
 import Head from "next/head"
 import { fetcher } from "@/api/api"
 
+import {
+  SyncOutlined,
+} from '@ant-design/icons';
+
 import { HotnewsLarge,
          SlideHotnews
  } from "@/components/Homepage/Hotnews" 
@@ -40,7 +44,7 @@ function SectionHotNews(Hotnews){
       <div className="flex sm:flex-row flex-col-reverse justify-between h-auto">
          {/* List news */}
         <div className="sm:w-4/6 w-auto h-auto">
-            <div className="text-black sm:text-left text-center py-2 mb-5 text-base  font-bold leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
+            <div className="text-black sm:text-left text-center py-2 sm:mb-5  font-bold leading-10 sm:bg-white bg-blue-200">       
             🚩 TOP LƯỢT XEM
             </div>
             <div className="flex flex-col m-t-2 text-justify">
@@ -65,11 +69,12 @@ function SectionHotNews(Hotnews){
         </div>
          {/* Latest news */}
         <div className="sm:w-1/4 w-auto sm:mb-5 sm:bg-white bg-gray-200">
-          <div className="text-black text-center text-base py-2 mb-5 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
-          ⏲ TIN TỨC MỚI CẬP NHẬT
+          <div className="flex flex-col text-black text-center py-2  leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
+            <div className="font-bold">⏲ TIN TỨC MỚI </div> 
+            <SyncOutlined spin className="mx-2"/>
           </div>
           <div className="inset-border p-4">
-              {Hotnews.Hotnews.slice(0,7).map((item)=>(
+              {Hotnews.latestPost.slice(0,7).map((item)=>(
                 <Latestnews key={item.id} news={item}/>
               ))}
           </div>
@@ -84,7 +89,7 @@ function SectionNews(latestPost){
       <div className="flex sm:flex-wrap flex-wrap-reverse justify-between h-auto">
          {/* List news */}
         <div className="sm:w-4/6 w-auto h-auto">
-          <div className="text-black text-center text-base py-2 mb-5 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200 rounded-b-full">       
+          <div className="text-black text-center text-base py-2 mb-5 font-bold text-shadow-black leading-10 sm:bg-white bg-blue-200">       
           📄 TIN TỨC CHÍNH
           </div>
           <div className="sm:border-dashed sm:border-r-2 border-indigo-600">
@@ -127,9 +132,9 @@ const Page = ({latestPost,cate,getHot}) => {
           <span className="ml-2"><Button href="/location-global">Global</Button></span>
         </nav>
         <div className="flex flex-col ">
-          <SectionCate key={cate.id} cate={cate.data}/>
-          <SectionHotNews key={getHot.id} Hotnews={getHot.data}/>
-          <SectionNews key={latestPost.id} latestPost={latestPost.data}/>
+          <SectionCate cate={cate.data}/>
+          <SectionHotNews  Hotnews={getHot.data} latestPost={latestPost.data} />
+          <SectionNews latestPost={latestPost.data}/>
         </div>
       </div>
       <Footer/>
