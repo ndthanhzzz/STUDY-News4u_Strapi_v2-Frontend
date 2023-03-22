@@ -16,7 +16,7 @@ export default function index() {
                 <div className="w-full  max-w-md z-10">
                     <div className="sm:text-4xl xl:text-5xl font-bold leading-tight mb-6">   New4u </div>
                     <Link href="/"  className="sm:text-sm xl:text-md text-gray-200 font-normal hover:font-bold"> 
-                            Trang chủ
+                            Quay lại trang chủ
                     </Link>
                 </div>
             </div>

@@ -13,16 +13,16 @@ export default function index() {
             <div className="hidden bg-cover lg:block lg:w-2/5" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1494621930069-4fd4b2e24a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80")'}}>
             <div className="w-full  max-w-md z-10 mx-auto mt-64 text-white">
                     <div className="sm:text-4xl xl:text-5xl font-bold leading-tight mb-6">   New4u </div>
-                    <Link href="/"  className="max-lg:block hidden sm:text-sm xl:text-md text-gray-200 font-normal hover:font-bold"> 
-                            Trang chủ
+                    <Link href="/"  className=" sm:text-sm xl:text-md text-gray-200 font-normal hover:font-bold"> 
+                            Quay lại trang chủ
                     </Link>
                 </div>
             </div>
             
             <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
                 <div className="w-full">
-                    <Link href="/"  className="sm:text-sm xl:text-md text-gray-500 font-normal hover:font-bold"> 
-                                Trang chủ
+                    <Link href="/"  className="max-lg:block hidden sm:text-sm xl:text-md text-gray-500 font-normal hover:font-bold"> 
+                            Trang chủ
                     </Link>
                     <h1 className="text-2xl font-semibold tracking-wider text-gray-800 capitalize dark:text-white">
                         Tạo tài khoản miễn phí ngay.
